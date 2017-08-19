@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      lang="pt">
+<h:head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="giliard-ss" />
+    <title>Oferta Livre</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/prettyPhoto.css" rel="stylesheet" />
+    <link href="../css/price-range.css" rel="stylesheet" />
+    <link href="../css/animate.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/responsive.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .ui-paginator-top {
+            display: none; !important;
+        }
+
+        .ui-datagrid-content{
+            border: none; !important;
+        }
+        .ui-paginator{
+            background: #40403E; !important;
+            border-bottom: 1px solid #FE980F; !important;
+        }
+        .ui-widget-content{
+            background: none;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollUp.min.js"></script>
+    <script type="text/javascript" src="../js/price-range.js"></script>
+    <script type="text/javascript" src="../js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="../js/main.js?v=1"></script>
+</h:head>
+<h:body>
+    <h:form id="mainForm">
+        #{freeSaleBean.init()}
+    <header id="header"><!--header-->
+        <div class="header-middle"><!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html"><img src="../images/home/logo.png" alt="" /></a>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-5">
+
+
+                        <div style="width:100%" class="search_box pull-right">
+                            <input type="text" style="width:100%;background-position: 98%;padding-right:20px" placeholder="Pesquisar"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->
+
+        <div class="header-bottom"><!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li><a href="index.html" class="active">Home</a></li>
+                                <li><a href="#">Produtos</a></li>
+                                <li><a href="#">Serviços</a></li>
+                                <li><a href="#">Entidades</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!--/header-bottom-->
+    </header><!--/header-->
+
+    <section id="slider" style="margin-top: 15px"><!--slider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-sm-6">
+                                    <h1><span>OFERTA</span> LIVRE</h1>
+                                    <h2>Economize Tempo e Dinheiro!</h2>
+                                    <p>Qualquer empreendimento perto de você pode divulgar promoções aqui. Dê uma olhada primeiro para economizar tempo e dinheiro!</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../images/home/girl1.jpg" class="girl img-responsive" alt="" />
+
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-sm-6">
+                                    <h1><span>OFERTA</span> LIVRE</h1>
+                                    <h2>Divulgue Sua Promoção Gratuitamente</h2>
+                                    <p>Se você ofere produtos ou serviços, divulgue aqui suas promoções. É fácil e gratuito! Entre em contato para mais detalhes. </p>
+                                    <button type="button" class="btn btn-default get">Contato</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../images/home/girl2.jpg" class="girl img-responsive" alt="" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section><!--/slider-->
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <h2>FILTRAR</h2>
+                        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            Produtos
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="womens" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><a href="#">Frutas</a></li>
+                                            <li><a href="#">Bebidas</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            Serviços
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="womens" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><a href="#">Frutas</a></li>
+                                            <li><a href="#">Bebidas</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--/category-products-->
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items"><!--features_items-->
+                        <h2 class="title text-center">Ofertas Lançadas</h2>
+
+                    </div><!--features_items-->
+
+                    <div class="category-tab" id="sales-tab"><!--category-tab-->
+                            <p:dataGrid var="sale"  value="#{freeSaleBean.sales}" columns="3" layout="grid"
+                                        rows="12" paginator="true" id="sales"
+                                        paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}">
+
+                                <p:ajax event="page" onsuccess="anchor('slider')" actionListener="#{freeSaleBean.page()}" process="mainForm:sales" />
+
+                                <p:outputPanel style="width: 80%;margin: 0 auto;">
+
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="../images/home/gallery1.jpg" alt="" style="max-width: 220px" />
+                                                    <h2>R$ #{sale.cost}</h2>
+                                                    <p>#{sale.description}</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                </p:outputPanel>
+
+                            </p:dataGrid>
+                    </div><!--/category-tab-->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" style="margin-top:100px;"><!--Footer-->
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">Copyright © 2017 Oferta Livre. Todos os direitos reservados.</p>
+                    <p class="pull-right">Designed by <span><a target="_blank" href="#">GYSTEC</a></span></p>
+                </div>
+            </div>
+        </div>
+
+    </footer><!--/Footer-->
+
+
+
+
+    </h:form>
+</h:body>
+</html>
