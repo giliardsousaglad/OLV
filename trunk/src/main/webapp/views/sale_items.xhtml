@@ -82,31 +82,6 @@
             </div>
         </div><!--/header-middle-->
 
-        <div class="header-bottom"><!--header-bottom-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="mainmenu pull-left">
-                            <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="index.html" class="active">Home</a></li>
-                                <li><a href="#">Produtos</a></li>
-                                <li><a href="#">Serviços</a></li>
-                                <li><a href="#">Entidades</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div><!--/header-bottom-->
     </header><!--/header-->
 
         <section id="advertisement">
@@ -177,7 +152,7 @@
 
                     <div class="category-tab" id="sales-tab"><!--category-tab-->
                             <p:dataGrid var="sale"  value="#{freeSaleBean.sales}" columns="3" layout="grid"
-                                        rows="20" paginator="false" id="sales">
+                                        rows="9" paginator="false" id="sales">
 
                                 <p:ajax event="page" listener="#{freeSaleBean.page()}" process="mainForm:sales" onsuccess="anchor('sales-tab-title')"  />
 
@@ -197,9 +172,18 @@
                             </p:dataGrid>
                     </div><!--/category-tab-->
 
+                    <ul class="pagination">
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">&raquo;</a></li>
+                    </ul>
+
                 </div>
+
             </div>
         </div>
+
     </section>
 
     <footer id="footer" style="margin-top:100px;"><!--Footer-->

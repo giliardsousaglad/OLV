@@ -36,6 +36,11 @@
             background: none;
         }
 
+        .header-bottom{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
     </style>
 
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -70,31 +75,6 @@
             </div>
         </div><!--/header-middle-->
 
-        <div class="header-bottom"><!--header-bottom-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="mainmenu pull-left">
-                            <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="index.html" class="active">Home</a></li>
-                                <li><a href="#">Produtos</a></li>
-                                <li><a href="#">Serviços</a></li>
-                                <li><a href="#">Entidades</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div><!--/header-bottom-->
     </header><!--/header-->
 
     <section id="slider" style="margin-top: 15px"><!--slider-->
@@ -168,7 +148,6 @@
                                         <ul>
                                             <li><a href="#">Frutas</a></li>
                                             <li><a href="#">Bebidas</a></li>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -194,43 +173,114 @@
                                 </div>
                             </div>
 
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                            Entidades
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="womens" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><a href="#">Frutas</a></li>
+                                            <li><a href="#">Bebidas</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div><!--/category-products-->
 
                     </div>
                 </div>
 
-                <div class="col-sm-9 padding-right">
-                    <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Ofertas Lançadas</h2>
 
-                    </div><!--features_items-->
+                <div class="category-tab"><!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#products" data-toggle="tab">Produtos</a></li>
+                            <li ><a href="#services" data-toggle="tab">Serviços</a></li>
+                            <li ><a href="#entities" data-toggle="tab">Entidades</a></li>
+                        </ul>
+                    </div>
 
-                    <div class="category-tab" id="sales-tab"><!--category-tab-->
-                            <p:dataGrid var="sale"  value="#{freeSaleBean.sales}" columns="3" layout="grid"
-                                        rows="12" paginator="true" id="sales"
-                                        paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}">
-
-                                <p:ajax event="page" onsuccess="anchor('slider')" actionListener="#{freeSaleBean.page()}" process="mainForm:sales" />
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="products" >
+                            <p:dataGrid var="sale"  value="#{freeSaleBean.sales}" columns="4" layout="grid"
+                                        rows="6" >
 
                                 <p:outputPanel style="width: 80%;margin: 0 auto;">
 
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="../images/home/gallery1.jpg" alt="" style="max-width: 220px" />
-                                                    <h2>R$ #{sale.cost}</h2>
-                                                    <p>#{sale.description}</p>
-
-                                                </div>
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="../images/home/gallery1.jpg" alt="" style="max-width: 220px" />
+                                                <h2>R$ #{sale.cost}</h2>
+                                                <p>#{sale.description}</p>
 
                                             </div>
+
                                         </div>
+                                    </div>
                                 </p:outputPanel>
 
                             </p:dataGrid>
-                    </div><!--/category-tab-->
+                            <a class="btn btn-default add-to-cart" href="#" ><span class="glyphicon glyphicon-plus" aria-hidden="true"/> Ver Mais Produtos...</a>
+                        </div>
 
-                </div>
+                        <div class="tab-pane fade " id="services" >
+                            <p:dataGrid var="sale"  value="#{freeSaleBean.sales}" columns="4" layout="grid"
+                                        rows="6" >
+
+                                <p:outputPanel style="width: 80%;margin: 0 auto;">
+
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="../images/home/gallery1.jpg" alt="" style="max-width: 220px" />
+                                                <h2>R$ #{sale.cost}</h2>
+                                                <p>#{sale.description}</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </p:outputPanel>
+
+                            </p:dataGrid>
+                            <a class="btn btn-default add-to-cart" href="#" ><span class="glyphicon glyphicon-plus" aria-hidden="true"/> Ver Mais Serviços...</a>
+                        </div>
+
+                        <div class="tab-pane fade" id="entities" >
+                            <p:dataGrid var="sale"  value="#{freeSaleBean.sales}" columns="4" layout="grid"
+                                        rows="6" >
+
+                                <p:outputPanel style="width: 80%;margin: 0 auto;">
+
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="../images/home/gallery1.jpg" alt="" style="max-width: 220px" />
+                                                <h2>R$ #{sale.cost}</h2>
+                                                <p>#{sale.description}</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </p:outputPanel>
+
+                            </p:dataGrid>
+                            <a class="btn btn-default add-to-cart" href="#" ><span class="glyphicon glyphicon-plus" aria-hidden="true"/> Ver Mais Entidades...</a>
+                        </div>
+                    </div>
+                </div><!--/category-tab-->
+
+
             </div>
         </div>
     </section>
