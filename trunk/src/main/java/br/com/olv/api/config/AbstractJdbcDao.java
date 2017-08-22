@@ -1,30 +1,38 @@
-package br.com.giliar.model.api.config;
+package br.com.olv.api.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import javax.sql.DataSource;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.*;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import java.util.Collections;
+import java.util.List;
 
-/**
- * Created by giliard-ss on 03/04/2017.
- */
-public abstract class AbstractJdbcDao {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+public abstract class AbstractJdbcDao<T> extends JdbcDaoSupport {
 
-    @Autowired
-    private void setJdbcTemplate(){
-        this.jdbcTemplate = new JdbcTemplate(getDataSouce());
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	@Autowired
+	public void setAppJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		setJdbcTemplate(jdbcTemplate);
+	}
+
+	protected abstract RowMapper<T> rowMapper();
+
+	protected int insert(String sql,  Object... args){
+		return jdbcTemplate.update(sql, args);
+	}
+
+	protected T get(String sql, RowMapper<T> rowMapper, Object... id)  {
+		return jdbcTemplate.queryForObject(sql, rowMapper, id);
+	}
+
+	protected List<T> list(String sql, RowMapper<T> rowMapper, Object... args) {
+		try{
+            return jdbcTemplate.query(sql, rowMapper, args);
+        } catch (EmptyResultDataAccessException ex) {
+			return Collections.emptyList();
+		}
     }
-
-    private DataSource getDataSouce(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/contactdb");
-        dataSource.setUsername("root");
-        dataSource.setPassword("P@ssw0rd");
-        return dataSource;
-    }
-
 
 }
