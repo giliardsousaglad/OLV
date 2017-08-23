@@ -7,16 +7,7 @@
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="br.com.olv.controller.*"/>
+    <import resource="classpath:spring/beans.xml" />
+    <import resource="classpath:spring/datasource.xml" />
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-
-        <property name="prefix">
-            <value>/WEB-INF/</value>
-        </property>
-
-        <property name="suffix">
-            <value>.xhtml</value>
-        </property>
-    </bean>
 </beans>
