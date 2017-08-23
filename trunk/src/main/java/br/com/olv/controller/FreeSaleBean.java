@@ -1,19 +1,25 @@
 package br.com.olv.controller;
 
 import br.com.olv.api.model.Sale;
+import br.com.olv.dao.SaleDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.context.annotation.SessionScope;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by giliard-ss on 18/08/2017.
  */
-@ManagedBean
-@ViewScoped
+
+@Controller
+@SessionScope
 public class FreeSaleBean {
     private List<Sale> sales;
+
+    @Autowired
+    private SaleDao saleDao;
 
     public void init(){
         sales = new ArrayList<Sale>();
@@ -24,6 +30,7 @@ public class FreeSaleBean {
             sale.setDescription("Test one of product brazilian");
             sales.add(sale);
         }
+        saleDao.insert(sales.get(0));
     }
 
     public void page(){
