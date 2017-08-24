@@ -114,6 +114,15 @@
       -->
       <filter>src/main/resources/profiles/${build.profile.id}.properties</filter>
     </filters>
+    <!-- appengine -->
+    <plugins>
+      <plugin>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>1.9.9</version>
+      </plugin>
+    </plugins>
+    <!-- /appengine -->
   </build>
 
 
